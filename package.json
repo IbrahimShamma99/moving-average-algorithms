@@ -1,0 +1,26 @@
+{
+  "name": "m-a",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+
+  },
+  "keywords": [
+    "moving average",
+    "moving-average",
+    "moving-averages",
+    "simple moving average",
+    "exponential moving average",
+    "weighted moving average",
+    "smoothed moving average",
+    "dynamic weighted moving average",
+    "sma",
+    "ema",
+    "wma",
+    "sma",
+    "dma"
+  ],
+  "author": "Ibrahim Shamma",
+  "license": "ISC"
+}
