@@ -2,8 +2,9 @@
   "name": "m-a",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+    "scripts": {
 
   },
   "keywords": [
