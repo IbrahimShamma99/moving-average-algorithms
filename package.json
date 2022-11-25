@@ -4,8 +4,8 @@
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-    "scripts": {
-
+  "scripts": {
+    "prepublish": "tsc"
   },
   "keywords": [
     "moving average",
