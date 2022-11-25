@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/kaelzhang/moving-averages.svg?branch=master)](https://travis-ci.org/kaelzhang/moving-averages)
 [![Coverage](https://codecov.io/gh/kaelzhang/moving-averages/branch/master/graph/badge.svg)](https://codecov.io/gh/kaelzhang/moving-averages)
+
 <!-- optional npm version
 [![NPM version](https://badge.fury.io/js/moving-averages.svg)](http://badge.fury.io/js/moving-averages)
 -->
@@ -12,16 +13,16 @@
 
 # WARNING
 
-This module is still under development 
-
+This module is still under development
 
 If you are familiar with python programming maybe you could check [**stock-pandas**](https://github.com/kaelzhang/stock-pandas) which provides powerful statistic indicators support, and is backed by [`numpy`](https://numpy.org/) and [`pandas`](https://pandas.pydata.org/), The performance of [**stock-pandas**](https://github.com/kaelzhang/stock-pandas) is many times higher than JavaScript libraries, and can be directly used by machine learning programs.
 
-****
+---
 
 # moving-averages
 
 The complete collection of utility methods for [Moving average](https://en.wikipedia.org/wiki/Moving_average), including:
+
 - [simple moving average (MA)](#simple-moving-average-madata-size)
 - [dynamic weighted moving average (DMA)](#dynamic-weighted-moving-average-dmadata-alpha-nohead)
 - [exponential moving average (EMA)](#exponential-moving-average-emadata-size)
@@ -39,11 +40,9 @@ $ npm i moving-averages
 ## usage
 
 ```ts
-import {
-  ma, dma, ema, sma, wma
-} from 'moving-averages'
+import { dynamicWeightedMA, smoothingMA, ExponentialMA, MA, WeightedMA } from "moving-averages";
 
-ma([1, 2, 3, 4, 5], 2)
+ma([1, 2, 3, 4, 5], 2);
 // [<1 empty item>, 1.5, 2.5, 3.5, 4.5]
 ```
 
@@ -57,13 +56,15 @@ Returns `Array.<Number> | null`
 #### Special Cases
 
 ```ts
+import { MA } from "moving-average-ts";
+
 // If the size is less than `1`
-ma([1, 2, 3], 0.5)       // [1, 2, 3]
+MA([1, 2, 3], 0.5); // [1, 2, 3]
 
 // If the size is larger than data length
-ma([1, 2, 3], 5)         // [<3 empty items>]
+MA([1, 2, 3], 5); // [<3 empty items>]
 
-ma([, 1,, 3, 4, 5], 2)
+MA([, 1, , 3, 4, 5], 2);
 // [<2 empty items>, 0.5, 1.5, 3.5, 4.5]
 ```
 
@@ -81,12 +82,13 @@ And all of the other moving average methods have similar mechanism.
 Returns `Array.<Number> |undefined`
 
 ```ts
-dma([1, 2, 3], 2)    // [<3 empty items>]
+import { dynamicWeightedMA } from "moving-average-ts";
 
-dma([1, 2, 3], 0.5)  // [1, 1.5, 2.25]
+dynamicWeightedMA([1, 2, 3], 2); // [<3 empty items>]
 
-dma([1, 2, 3, 4, 5], [0.1, 0.2, 0.1])
-// [1, 1.2, 1.38]
+dynamicWeightedMA([1, 2, 3], 0.5); // [1, 1.5, 2.25]
+
+dynamicWeightedMA([1, 2, 3, 4, 5], [0.1, 0.2, 0.1]); // [1, 1.2, 1.38]
 ```
 
 ## Exponential Moving Average: `ema(data, size)`
@@ -114,7 +116,7 @@ Calculates convolution of the datum points with a fixed weighting function.
 
 Returns `Array.<Number|undefined>`
 
-<!-- 
+<!--
 ## Related Modules
 
 - [bollinger-bands](https://www.npmjs.com/package/bollinger-bands): Fintach math utility to calculate bollinger bands.
