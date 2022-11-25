@@ -5,9 +5,9 @@ import ma from './ma';
 import wma from './wma';
 
 export {
-    dma,
-    sma,
-    ema,
-    ma,
-    wma
+    dma as dynamicWeightedMA,
+    sma as smoothingMA,
+    ema as ExponentialMA,
+    ma as MA,
+    wma as WeightedMA
 }
