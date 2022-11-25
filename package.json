@@ -1,5 +1,5 @@
 {
-  "name": "m-a",
+  "name": "moving-average-ts",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
