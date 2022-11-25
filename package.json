@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "prepublish": "tsc"
+    "prepublish": "tsc --project ./"
   },
   "keywords": [
     "moving average",
@@ -23,5 +23,8 @@
     "dma"
   ],
   "author": "Ibrahim Shamma",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.9.3"
+  }
 }

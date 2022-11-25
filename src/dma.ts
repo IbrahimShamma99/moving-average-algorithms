@@ -7,16 +7,17 @@ import {
 
 
 // @param {Number|Array.<Number>} alpha
-export default (data: DataObject, alpha: number , noHead: number | null) => {
+export default (data: DataObject, alpha: number | Array<number>, noHead: number | null) => {
 
   const length = data.length
+  if (typeof alpha === "number") {
+    if (alpha > 1) {
+      return Array(length)
+    }
 
-  if (alpha > 1) {
-    return Array(length)
-  }
-
-  if (alpha === 1) {
-    return data.slice()
+    if (alpha === 1) {
+      return data.slice()
+    }
   }
 
   const noArrayWeight = !isArray(alpha)
